@@ -18,6 +18,7 @@ sequelize.authenticate()
 
 const articleRouter = require('./routes/article');
 app.use('/', articleRouter);
+app.use('/articles', articleRouter);
 
 app.listen(3000, () => {
   console.log('Server is running on http://localhost:3000.');
