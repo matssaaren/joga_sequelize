@@ -6,6 +6,12 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class Author extends Model {
     static associate(models) {
+      this.hasMany(models.Article, {
+        foreignKey: {
+            name: 'author_id',
+            field: 'author_id'
+        }
+    });
     }
   }
 

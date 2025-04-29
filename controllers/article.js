@@ -21,7 +21,7 @@ const getArticleBySlug = (req, res) => {
       },
         include: [{
             model: modles.Author
-        }],
+        }]
     })
     .then(article => {
       console.log(article);
