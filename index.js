@@ -15,12 +15,14 @@ sequelize.authenticate()
   .catch(err => {
     console.error('Unable to connect to the database:', err);
   });
-
+  
+const adminArticleRouter = require('./routes/admin/article');
 const articleRouter = require('./routes/article');
 const authorRouter = require('./routes/author');
 app.use('/', articleRouter);
 app.use('/articles', articleRouter);
 app.use('/author', authorRouter);
+app.use('/admin/article', adminArticleRouter);
 
 app.listen(3000, () => {
   console.log('Server is running on http://localhost:3000.');
